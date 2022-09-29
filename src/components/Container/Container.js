@@ -4,6 +4,13 @@ import Profile from '../Profile/Profile';
 import './Container.css';
 
 const Container = () => {
+    const breakTime = [
+        {time:10,},
+        {time:15,},
+        {time:20,},
+        {time:15,}
+    ]
+    const [times, setTimes] = useState([])
 const [files, setFiles] = useState([]);
 const [profile, setProfile] = useState([]);
 
@@ -16,6 +23,9 @@ const [profile, setProfile] = useState([]);
     const handleClick = (fil) =>{
         const newProfile = [...profile, fil]
         setProfile(newProfile);
+    }
+    const clicks = (tim) =>{
+        setTimes(tim);
     }
 
     return (
@@ -31,9 +41,13 @@ const [profile, setProfile] = useState([]);
                 }
             </div>
             <div className="side-container">
-                <h2>side container</h2>
-                <h2>items: {profile.length}</h2>
-                <Profile profile={profile}></Profile>
+                <h2>Add A Break</h2>
+                <div  className='dis'>
+                {
+                    breakTime.map(times => <button className='btnss' onClick={()=> clicks(times.time)}>{times.time}</button>)
+                }
+                </div>
+                <Profile times={times} profile={profile}></Profile>
             </div>
         </div>
     );
