@@ -2,8 +2,8 @@ import React from 'react';
 import './File.css';
 
 const File = (props) => {
-    const {handleClick} = props;
-    const{name, img, age, time }  = props.file;
+    const {handleClick, file} = props;
+    const{name, img, age, time }  = file;
      
 
 
@@ -15,7 +15,7 @@ const File = (props) => {
                 <p>For age : {age}</p>
                 <p>Time Required: {time} H</p>
             </div>
-            <button onClick={()=> handleClick(props.file)} className='btn-lists'>Add to list</button>
+            <button onClick={()=> handleClick(file)} className='btn-lists'>Add to list</button>
         </div>
     );
 };

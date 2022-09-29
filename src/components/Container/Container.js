@@ -14,7 +14,8 @@ const [profile, setProfile] = useState([]);
     } ,[])
 
     const handleClick = (fil) =>{
-        console.log(fil)
+        const newProfile = [...profile, fil]
+        setProfile(newProfile);
     }
 
     return (
@@ -31,7 +32,8 @@ const [profile, setProfile] = useState([]);
             </div>
             <div className="side-container">
                 <h2>side container</h2>
-                <Profile></Profile>
+                <h2>items: {profile.length}</h2>
+                <Profile profile={profile}></Profile>
             </div>
         </div>
     );

@@ -1,9 +1,19 @@
 import React from 'react';
 
-const Profile = () => {
+const Profile = ({profile}) => {
+    console.log(profile)
+    let total = 0;
+
+    for (const times of profile){
+        total = total + times.time;
+    }
     return (
         <div>
-            <h2>This is side</h2>
+            <h2>Practice Details</h2>
+        <div>
+            <p>practice Time : {total}</p>
+            <p></p>
+        </div>
         </div>
     );
 };
