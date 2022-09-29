@@ -1,0 +1,19 @@
+.container{
+    display: flex;
+}
+.study-container{
+    width: 75%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+.side-container{
+    width: 25%;
+}
+
+@media screen and (max-width: 667px){
+    .study-container{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
