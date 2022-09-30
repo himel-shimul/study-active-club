@@ -2,9 +2,12 @@
     display: flex;
 
 }
+.lside-container{
+    width: 75%;
+}
 .study-container{
     background-color: #f7f7f7;
-    width: 75%;
+   
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;

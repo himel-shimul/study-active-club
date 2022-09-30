@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 // import { addToDb, getStoredCart } from '../../utilities/fakedb';
 import File from '../File/File';
+import Header from '../Header/Header';
 import Profile from '../Profile/Profile';
 
 import './Container.css';
@@ -98,7 +99,8 @@ const [profile, setProfile] = useState([]);
 
     return (
         <div className='container'>
-            
+            <div className='lside-container'>
+            <Header></Header>
             <div className="study-container">
                 
                 {
@@ -109,11 +111,15 @@ const [profile, setProfile] = useState([]);
                         ></File>)
                 }
             </div>
+            </div>
             <div className="side-container">
+                <h1>Mohiuddin Shimul</h1>
+                <p>Toronto, CA</p>
+                <br />
                 <h2>Add A Break</h2>
                 <div  className='dis'>
                 {
-                    breakTime.map(times => <button className='btnss' onClick={()=> clicks(times)}>{times.time}</button>)
+                    breakTime.map(times => <button className='btnss' onClick={()=> clicks(times)}>{times.time}m</button>)
                 }
                 </div>
                 <Profile times={times} profile={profile}></Profile>
