@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 // import { addToDb, getStoredCart } from '../../utilities/fakedb';
 import File from '../File/File';
 import Profile from '../Profile/Profile';
+
 import './Container.css';
 
 const Container = () => {
@@ -67,12 +68,12 @@ const [profile, setProfile] = useState([]);
     const clicks = (tim) =>{
         console.log(tim)
         setTimes(tim.time);
-        callLocal(tim.id, tim.time)
+        callLocal(tim.time)
         // addToDb(tim.id);
     }
-    const callLocal = (nam , id) =>{
-        const cart = {};
-        cart[nam] = id;
+    const callLocal = (id) =>{
+        let cart = {};
+        cart = id;
         localStorage.setItem('cart', JSON.stringify(cart));
     }
     const getLocal = () =>{
@@ -89,14 +90,15 @@ const [profile, setProfile] = useState([]);
     }
     useEffect(() =>{
         const storedCart= getLocal();
-        console.log(storedCart.time);
-        setTimes(storedCart.time)
+        console.log(storedCart);
+        setTimes(storedCart)
     } ,[])
     
 
 
     return (
         <div className='container'>
+            
             <div className="study-container">
                 
                 {
