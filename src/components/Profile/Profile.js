@@ -2,7 +2,6 @@ import React from 'react';
 import './Profile.css';
 
 const Profile = ({profile, times}) => {
-    console.log(times)
     let total = 0;
 
     for (const times of profile){

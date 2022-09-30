@@ -1,7 +1,8 @@
 .files{
-    border: 1px solid red;
+    border: 1px solid #f7f7f7;
     border-radius: 8px;
     position: relative;
+    background-color: #fff;
 }
 .docs{
     padding: 8px;
