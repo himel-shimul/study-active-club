@@ -10,7 +10,7 @@ const Profile = ({profile, times}) => {
     for (const times of profile){
         total = total + times.time;
     }
-    const toasts = () => toast("Congratulations! You did it!! ⭐⭐");
+    const toasts = () => toast("Congratulations! You did it!!  ⭐⭐");
     
     return (
         <div>
